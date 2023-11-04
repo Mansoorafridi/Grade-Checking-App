@@ -3,7 +3,6 @@ function gradeCheck(event) {
     let gradeInput = document.querySelector("#gradeInput").value;
     gradeInput = Number(gradeInput);
 
-    console.log(gradeInput);
 
     let message = "";
 
@@ -17,8 +16,12 @@ function gradeCheck(event) {
         message = "Grade C Work Hard";
     } else if (gradeInput >= 40) {
         message = "Grade D";
-    } else {
+    }   
+     else {
         message = "You are Fail";
+    }
+    if(gradeInput > 100) {
+        message = "Invalid Input: Input should be between 0 and 100";
     }
 
     document.querySelector("#resultWindow").innerHTML = message;
